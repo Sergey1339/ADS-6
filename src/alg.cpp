@@ -17,7 +17,7 @@ BST<std::string>Tree;
     char letter = file.get();
     if ((letter >= 'a' && letter <= 'z') || (letter >= 'A' && letter <= 'Z')) {
       if (letter >= 'A' && letter <= 'Z')
-        letter += char(32);
+        letter += static_cast<char>(32);
       word += letter;
     } else if (word != "") {
       Tree.add(word);
