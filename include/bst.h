@@ -43,7 +43,7 @@ typename BST<T>::Node* BST<T>::AddNode(Node* root, T value) {
     return root;
 }
 
-int BST<T>::SearchNode(Node* root, T value){
+int BST<T>::SearchNode(Node* root, T value) {
     if (root == nullptr)
       return 0;
     else if (root->value > value)
