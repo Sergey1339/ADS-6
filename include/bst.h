@@ -26,6 +26,7 @@ class BST {
   int depth();
 };
 /*                                                             Реализация privat секции */
+template <typename T>
 typename BST<T>::Node* BST<T>::AddNode(Node* root, T value) {
     if (root == nullptr) {
       root = new Node;
@@ -43,6 +44,7 @@ typename BST<T>::Node* BST<T>::AddNode(Node* root, T value) {
     return root;
 }
 
+template <typename T>
 int BST<T>::SearchNode(Node* root, T value) {
     if (root == nullptr)
       return 0;
@@ -54,6 +56,7 @@ int BST<T>::SearchNode(Node* root, T value) {
       return root->count;
 }
 
+template <typename T>
 int BST<T>::DepthTree(Node* root) {
     if ((root == nullptr) || (root->left == nullptr && root->right == nullptr))
       return 0;
@@ -61,14 +64,17 @@ int BST<T>::DepthTree(Node* root) {
     return (left_h > right_h ? left_h : right_h) + 1;
 }
 /*                                                             Реализация public секции */
+template <typename T>
 void BST<T>::add(T value) {
     root = AddNode(root, value);
 }
 
+template <typename T>
 int BST<T>::search(T value) {
     return SearchNode(root, value);
 }
 
+template <typename T>
 int BST<T>::depth() {
     return DepthTree(root);
 }
